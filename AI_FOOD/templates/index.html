@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,3 +102,108 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .message {
+            color: red;
+            text-align: center;
+        }
+        .product-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Food Recommendations for Your Health Condition</h1>
+
+    <form method="POST">
+        <label for="condition">Enter your health condition (bp, diabetes, obesity): </label>
+        <input type="text" id="condition" name="condition" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    {% if foods %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Categories</th>
+                    <th>Labels</th>
+                    <th>Recommended Quantity</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food in foods %}
+                    <tr>
+                        <td><img src="{{ food.image_url }}" alt="Product Image" class="product-image"></td>
+                        <td>{{ food.product_name }}</td>
+                        <td>{{ food.quantity }}</td>
+                        <td>{{ food.categories }}</td>
+                        <td>{{ food.labels }}</td>
+                        <td>{{ food.recommended_quantity }}</td>
+                        <td>{{ food.reason }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+</body>
+</html>
+>>>>>>> 787bc04 (Added new files and updates)
