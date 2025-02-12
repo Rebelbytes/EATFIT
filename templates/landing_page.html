@@ -4,7 +4,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creator Analysis</title>
+    <title>EatFit</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='landing_page.css') }}">
 </head>
 <body>
@@ -30,7 +30,7 @@
                 {% endwith %}
             </div>
             <div id="navbar">
-                <div id="logo">ANALYSER</div>
+                <div id="logo">EatFit</div>
 
                 <div id="nav-part1">
                     <ul>
@@ -44,7 +44,7 @@
                 <div id="nav-part2">
                     <i id="theme-toggle" class="ri-moon-line"></i> <!-- Dark/Light Mode Toggle -->                
                     {% if 'user_id' in session %}
-                        <a href="#"><button id="user-email">{{ session['user_email'] }}</button></a>
+                        <a href="{{ url_for('profile') }}"><button id="user-email">{{ session['user_email'] }}</button></a>
                         <a href="{{ url_for('logout') }}"><button id="logout">Logout</button></a>
                     {% else %}
                         <a href="{{ url_for('login') }}"><button id="btn1">Login</button></a>
@@ -78,28 +78,28 @@
 
             <div id="features-list">
                 <div class="feature">
-                    <a href="{{ url_for('sentiment') }}">
-                        <img class="img" src="{{ url_for('static', filename='sentiment.jpg') }}" alt="Feature 1">
+                    <a href="{{ url_for('upload_file') }}">
+                        <img class="img" src="{{ url_for('static', filename='pack_fd_re.jpg') }}" alt="Feature 1">
                     </a>
-                    <h4><a href="{{ url_for('sentiment') }}">Packed Food product Review</a></h4>
+                    <h4><a href="{{ url_for('upload_file') }}">Packed Food product Review</a></h4>
                 </div>
                 <div class="feature">
-                    <a href="{{ url_for('page2') }}">
-                        <img class="img" src="{{ url_for('static', filename='channel.jpg') }}" alt="Feature 2">
+                    <a href="{{ url_for('alternative_products') }}">
+                        <img class="img" src="{{ url_for('static', filename='alt_prd.jpg') }}" alt="Feature 2">
                     </a>
-                    <h4><a href="{{ url_for('page2') }}">Alternate food Recommendation</a></h4>
+                    <h4><a href="{{ url_for('alternative_products') }}">Alternate food Recommendation</a></h4>
                 </div>
                 <div class="feature">
-                    <a href="{{ url_for('titlepage') }}">
-                        <img class="img" src="{{ url_for('static', filename='title.png') }}" alt="Feature 3">
+                    <a href="{{ url_for('diet_recommendation') }}">
+                        <img class="img" src="{{ url_for('static', filename='diet.jpg') }}" alt="Feature 3">
                     </a>
-                    <h4><a href="{{ url_for('titlepage') }}">Personalized Diet Recommendation</a></h4>
+                    <h4><a href="{{ url_for('diet_recommendation') }}">Personalized Diet Recommendation</a></h4>
                 </div>
                 <div class="feature">
-                    <a href="{{ url_for('summary') }}">
-                        <img class="img" src="{{ url_for('static', filename='summarizer.png') }}" alt="Feature 4">
+                    <a href="{{ url_for('cart') }}">
+                        <img class="img" src="{{ url_for('static', filename='cart.jpg') }}" alt="Feature 4">
                     </a>
-                    <h4><a href="{{ url_for('summary') }}">Personalized food Cart</a></h4>
+                    <h4><a href="{{ url_for('cart') }}">Personalized food Cart</a></h4>
                 </div>
             </div>
             
@@ -110,7 +110,7 @@
         <div id="about-us">
             <h2>About Us</h2>
             <p>
-                Welcome to our platform! We specialize in providing advanced tools for analyzing and enhancing your content.
+                Welcome to our platform! We specialize in providing advanced tools for analyzing nutrition content.
                 Our features are designed to help you grow and succeed in your digital endeavors. Stay tuned as we continue
                 to innovate and offer new solutions to meet your needs.
             </p>
